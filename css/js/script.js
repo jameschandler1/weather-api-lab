@@ -1,48 +1,49 @@
 
 async function getWeatherData(e) {
     e.preventDefault();
+    e.stopPropagation();
 
-    const cityName = $(`input[type="text"]`).val();
+    const cityNameWeather = $(`input[type="text"]`).val();
     const apiKey = '46bad53cdffa152d015bbe28e8a9a867';
     
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=${apiKey}`;
+    const urlWeather = `https://api.openweathermap.org/data/2.5/weather?q=${cityNameWeather}&units=imperial&appid=${apiKey}`;
     
 
     //required name it what you want but needed
-    const response = await fetch(url);
+    const responseWeather = await fetch(urlWeather);
     //required same as above ^
-    const data = await response.json();
+    const dataWeather = await responseWeather.json();
 
-    console.log(data);
+    console.log(dataWeather);
 
-    $('#city').html(data.name);
-    $('#d-scrip').html(data.weather[0].main);
-    $('#temp').html(data.main.temp);
+    $('#city').html(dataWeather.name);
+    $('#d-scrip').html(dataWeather.weather[0].main);
+    $('#temp').html(dataWeather.main.temp);
 };
 
-$('form').on('submit', getWeatherData);
 
-async function weeklyForcast(e) {
+async function getWeeklyForcast(e) {
     e.preventDefault();
+    e.stopPropagation();
 
-    const cityName = $(`input[type="text"]`).val();
-
+    const cityNameForcast = $(`input[type="text"]`).val();
     const apiKey = '46bad53cdffa152d015bbe28e8a9a867';
    
-    const url = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=imperial&appid=${apiKey}`;
+    const urlForcast = `http://api.openweathermap.org/data/2.5/forecast?q=${cityNameForcast}&units=imperial&appid=${apiKey}`;
     
     //required name it what you want but needed
-    const response = await fetch(url);
+    const responseForcast = await fetch(urlForcast);
     //required same as above ^
-    const data = await response.json();
+    const dataForcast = await responseForcast.json();
 
-    console.log(data);
+    console.log(dataForcast);
+    
+     $('#dayOne').html(dataForcast.list[0].weather[0].description);
+     $('#dayTwo').html(dataForcast.list[1].weather[0].description);
+     $('#dayThree').html(dataForcast.list[2].weather[0].description);
+     $('#dayFour').html(dataForcast.list[3].weather[0].description);
+     $('#dayFive').html(dataForcast.list[4].weather[0].description);
 
-    // $('#dayOne').html();
-    // $('#dayTwo').html();
-    // $('#dayThree').html();
-    // $('#dayFour').html();
-    // $('#dayFive').html();
 }
-
-weeklyForcast();
+$('.cityWeather').on('submit', getWeatherData);
+$('.cityWeather').on('submit', getWeeklyForcast);

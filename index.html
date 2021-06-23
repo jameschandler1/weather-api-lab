@@ -15,9 +15,9 @@
 <body>
     <section class='header'>
         <h1>Weather</h1> 
-        <form>
+        <form class="cityWeather">
             <input type="text" placeholder="Enter City" value=""/>
-            <input type="submit" placeholder="search"/>
+            <input type="submit" value="search"/>
         </form>
     </section>
     <article class="general">
@@ -30,31 +30,29 @@
       <dd id="temp"></dd>
     </dl>
     </article>
-    <article class="weekly">
-        <h1>Weekly Forcast</h1>
-        <section>
-            <form>
-                <input type="text" placeholder="Enter City" value=""/>
-                <input type="submit" placeholder="search"/>
-            </form>
-        </section>
-        <dl>
-          <dt>Monday</dt>
-                <dd class="days" id="dayOne"></dd>
-                <dd class="temp"></dd>
-          <dt>Tuesday</dt>
-                <dd class="days" id="dayTwo"></dd>
-                <dd class="temp"></dd>
-          <dt>Wednesday</dt>
-                <dd class="days" id="dayThree"></dd>
-                <dd class="temp"></dd>
-          <dt>Thursday</dt>
-                <dd class="days" id="dayFour"></dd>
-                <dd class="temp"></dd>
-          <dt>Friday</dt>
-                <dd class="days" id="dayFive"></dd>
-                <dd class="temp"></dd>
-        </dl>
-    </article>
+    <section class="weekly">
+            <dl>
+                <dt>day one</dt>
+                    <dd class="day" id="dayOne"></dd>
+                    <dd class="temp"></dd>
+                    <dd class="weather"></dd>
+                <dt>day two</dt>
+                    <dd class="day" id="dayTwo"></dd>
+                    <dd class="temp"></dd>
+                    <dd class="weather"></dd>
+                <dt>day three</dt>
+                    <dd class="day" id="dayThree"></dd>
+                    <dd class="temp"></dd>
+                    <dd class="weather"></dd>
+                <dt>day four</dt>
+                    <dd class="day" id="dayFour"></dd>
+                    <dd class="temp"></dd>
+                    <dd class="weather"></dd>
+                <dt>day five</dt>
+                    <dd class="day" id="dayFive"></dd>
+                    <dd class="temp"></dd>
+                    <dd class="weather"></dd>
+            </dl>
+    </section>
 </body>
 </html>
