@@ -14,7 +14,7 @@ async function getWeatherData(e) {
     //required same as above ^
     const dataWeather = await responseWeather.json();
 
-    console.log(dataWeather);
+    // console.log(dataWeather);
 
     $('#city').html(dataWeather.name);
     $('#d-scrip').html(dataWeather.weather[0].main);
@@ -28,6 +28,7 @@ async function getWeeklyForcast(e) {
     e.stopPropagation();
 
     const cityNameForcast = $(`input[type="text"]`).val();
+
     const apiKey = '46bad53cdffa152d015bbe28e8a9a867';
    
     const urlForcast = `http://api.openweathermap.org/data/2.5/forecast?q=${cityNameForcast}&units=imperial&appid=${apiKey}`;
@@ -63,26 +64,23 @@ async function getWeeklyForcast(e) {
 
 $('.cityWeather').on('submit', getWeeklyForcast);
 
-// async function (e) {
-//     e.preventDefault();
-//     e.stopPropagation();
+const map = new ol.Map({
+    target: 'map',
+    layers: [
+      new ol.layer.Tile({
+        source: new ol.source.OSM()
+      }),
+    ],
+    view: new ol.View({
+      center: ol.proj.fromLonLat([-96.09, 38.71]),
+      zoom: 3.7
+    })
+});
 
-//     const apiKey = '46bad53cdffa152d015bbe28e8a9a867';
-    
-//     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=${apiKey}`;
-    
+if ($('input').val() !== '') {
+    map.center = ol.proj.fromLonLat([-96.09, 38.71])
+}
 
-//     //required name it what you want but needed
-//     const response = await fetch(url);
-//     //required same as above ^
-//     const data = await response.json();
-
-//     console.log(data);
-
-//     $('#').html();
-//     $('#').html();
-//     $('#').html();
-// };
 
 
 

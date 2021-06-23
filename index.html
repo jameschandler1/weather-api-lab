@@ -1,59 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+    <!--api from open layers to display map -->
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
-  <script src="css/js/script.js" defer></script>
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <script src="css/js/script.js" defer></script>
     <title>Weather</title>
 </head>
-<body>
-    <section class='header'>
-        <h1>Weather</h1> 
-        <form class="cityWeather">
-            <input type="text" placeholder="Enter City" value=""/>
-            <input type="submit" value="search"/>
-        </form>
-    </section>
-    <article class="general">
-    <dl>
-      <dt>City</dt>
-        <dd id="city"></dd>
-      <dt>Description</dt>
-        <dd id="d-scrip"></dd>
-      <dt>Temperature</dt>
-        <dd id="temp"></dd>
-    </dl>
-    </article>
-    <section class="weekly">
-        <h1>Five Day Forcast</h1>
-            <dl>
-                <dt>day one</dt>
-                    <dd id="dateOne"></dd>
-                    <dd class="day" id="dayOne"></dd>
-                    <dd id="tempOne"></dd>
-                <dt>day two</dt>
-                    <dd id="dateTwo"></dd>
-                    <dd class="day" id="dayTwo"></dd>
-                    <dd id="tempTwo"></dd>
-                <dt>day three</dt>
-                    <dd id="dateThree"></dd>
-                    <dd class="day" id="dayThree"></dd>
-                    <dd id="tempThree"></dd>
-                <dt>day four</dt>
-                    <dd id="dateFour"></dd>
-                    <dd class="day" id="dayFour"></dd>
-                    <dd id="tempFour"></dd>
-                <dt>day five</dt>
-                    <dd id="dateFive"></dd>
-                    <dd class="day" id="dayFive"></dd>
-                    <dd id="tempFive"></dd>                   
-            </dl>
-    </section>
-</body>
+    <body>
+    <section id="all">
+            <h1 class="h1">Weather By City</h1> 
+            <form class="cityWeather">
+                <input type="text" placeholder="Enter City" value=""/>
+                <input type="submit" value="search"/>
+            </form> </br >
+            <div id="city">City:</div>
+                <div id="city"></div> </br >
+
+            <div id="description">Description:</div> 
+                <div id="d-scrip"></div> </br >
+            
+            <div id="temperature">Temperature:</div> 
+                <div id="temp"></div> </br >
+            <h1 class="h1" id="forcast-h1">Five Day Forecast</h1>
+            <section id="div-days-container">
+                <div class="div-days">day one:</div>
+                    <div id="dateOne"></div>
+                    <div id="dayOne"></div>
+                    <div id="tempOne"></div>
+                <div class="div-days">day two:</div>
+                    <div id="dateTwo"></div>
+                    <div id="dayTwo"></div>
+                    <div id="tempTwo"></div>
+                <div class="div-days">day three:</div>
+                    <div id="dateThree"></div>
+                    <div id="dayThree"></div>
+                    <div id="tempThree"></div>
+                <div class="div-days">day four:</div>
+                    <div id="dateFour"></div>
+                    <div id="dayFour"></div>
+                    <div id="tempFour"></div>
+                <div class="div-days">day five:</div>
+                    <div id="dateFive"></div>
+                    <div id="dayFive"></div>
+                    <div id="tempFive"></div>                   
+            </section>
+            <h1 id="h1-map">Map</h1>
+                <div id="map" class="map"></div>
+        </section>
+    </body>
 </html>

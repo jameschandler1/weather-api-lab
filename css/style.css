@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+
+#contents {
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+.div-days {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    width: fit-content;
+    height: fit-content;
+}
+
+#div-days-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: column;
+}
+
+canvas {
+    width: auto;
+    height: min-content;
+    
+}
